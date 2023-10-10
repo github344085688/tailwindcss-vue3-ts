@@ -1,25 +1,70 @@
-import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
-import HomeView from '../views'
+import Main from "@/layouts";
+import {filterRouterTopMap} from "@/utils/utils";
+import UserRouters from "./user-routers";
+import MainRouters from "./main-routers";
+import {
+    createRouter,
+    createWebHistory,
+    RouteRecordRaw,
+    RouteLocationNormalized,
+    RouteLocationNormalizedLoaded,
+    Router,
+    RouteRecordNormalized,
+} from "vue-router";
 
-const routes: Array<RouteRecordRaw> = [
-  {
-    path: '/',
-    name: 'home',
-    component: HomeView
-  },
-  {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-  }
-]
+type ScrollPositionCoordinates = {
+    behavior?: ScrollOptions["behavior"];
+    left?: number;
+    top?: number;
+};
 
-const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
-  routes
-})
+interface ScrollPositionElement extends ScrollToOptions {
+    el: string | Element;
+}
 
-export default router
+const childrenRouters = () => {
+    let childRouters: Array<any> = [];
+    filterRouterTopMap(MainRouters, childRouters, [
+        "path",
+        "name",
+        "component",
+        "redirect",
+    ]);
+    return childRouters;
+};
+const mainRoutes: any = [
+    {
+        path: "/main",
+        name: "Main",
+        component: Main,
+        redirect: {name: "Dashboard"},
+        children: childrenRouters(),
+    },
+];
+
+const routes: Array<RouteRecordRaw> = [...UserRouters, ...mainRoutes];
+
+const router: Router = createRouter({
+    history: createWebHistory(process.env.BASE_URL),
+    routes,
+    async scrollBehavior(
+        to: RouteLocationNormalized,
+        from: RouteLocationNormalizedLoaded,
+        savedPosition: ScrollPositionCoordinates | null
+    ): Promise<ScrollPositionCoordinates | ScrollPositionElement | false | void> {
+        if (savedPosition) {
+            return savedPosition;
+        }
+
+        if (to.hash) {
+            return {el: to.hash};
+        }
+        const [component]: RouteRecordNormalized[] = to.matched;
+
+        if (component.meta.scrollToTop) {
+            return {left: 0, top: 0};
+        }
+    },
+});
+
+export default router;
