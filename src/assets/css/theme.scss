@@ -15,6 +15,7 @@ body {
   @apply fill-black  group-[.active]:fill-blue-600 dark:fill-white
 }
 
+
 .parent-level {
   .nav-link-detales {
 
@@ -36,6 +37,7 @@ body {
         .child-item {
           &:last-child .line {
             bottom: 49% !important;
+           
 
           }
         }
@@ -65,90 +67,14 @@ body {
 }
 
 @media (max-width: 768px) {
-  .sm\:parent-level {
-    @apply w-[4.375rem] min-w-[4.375rem] transition-all duration-500;
-    .log-big {
-      @apply hidden;
-    }
-
-    .log-nano {
-      display: block;
-    }
-
-    .nav-link-detales {
-      .group-name {
-        @apply hidden;
-      }
-
-      .item_connect {
-        .childs-box {
-          height: 0px !important;
-          @apply absolute top-[-10px] left-[2.5rem] z-50 pt-[10px] pb-[10px] pl-[22px]  min-w-[250px]   transition-all duration-500 hidden;
-          overflow: initial !important;
-
-          .child-item {
-            padding: 0 !important;
-            opacity: 0;
-            transition: opacity 0.8s;
-
-            &::before {
-              content: initial;
-            }
-          }
-
-          .line {
-            @apply hidden;
-          }
-
-          .child-item {
-            opacity: 1 !important;
-            @apply p-0 px-[8px]  text-left rounded-md ml-0 bg-gray-700 shadow-md
-          }
-        }
-
-        .show-childs {
-          height: auto !important;
-          overflow: initial !important;
-          transition: all 0.5s;
-
-          .child-item {
-            opacity: 1 !important;
-          }
-        }
-
-        &:hover, &.hover {
-          @apply relative;
-
-          .item_box {
-            background: rgba(200, 216, 228, 0.7);
-            transition: all 0.5s;
-          }
-
-          .childs-box {
-            height: auto !important;
-            @apply block;
-
-            .child-item {
-              opacity: 1;
-              transition: opacity 0.8s;
-            }
-          }
-
-        }
-
-        .item_box {
-          z-index: 0;
-          width: 100% !important;
-          justify-content: center !important;
-
-          .img-box {
-            display: contents !important;
-            text-align: center;
-          }
-
-          .pro-ab {
-            @apply hidden;
-          }
+  .item_connect {
+    &:hover {
+      .childs-box {
+        height: auto !important;
+        @apply block;
+        .child-item {
+          opacity: 1;
+          transition: opacity 0.8s;
         }
       }
     }
