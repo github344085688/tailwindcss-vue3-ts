@@ -2,6 +2,7 @@ import Main from "@/layouts";
 import {filterRouterTopMap} from "@/utils/utils";
 import UserRouters from "./user-routers";
 import MainRouters from "./main-routers";
+import NavigationExample from "@/layouts/navigationExample";
 import {
     createRouter,
     createWebHistory,
@@ -41,8 +42,15 @@ const mainRoutes: any = [
         children: childrenRouters(),
     },
 ];
+const navigationExample: any = [
+    {
+        path: "/navigationExample",
+        name: "NavigationExample",
+        component: NavigationExample,
+    },
+];
 
-const routes: Array<RouteRecordRaw> = [...UserRouters, ...mainRoutes];
+const routes: Array<RouteRecordRaw> = [...UserRouters, ...mainRoutes, ...navigationExample];
 
 const router: Router = createRouter({
     history: createWebHistory(process.env.BASE_URL),
@@ -61,7 +69,7 @@ const router: Router = createRouter({
         }
         const [component]: RouteRecordNormalized[] = to.matched;
 
-        if (component.meta.scrollToTop) {
+        if (component && component.meta && component.meta.scrollToTop) {
             return {left: 0, top: 0};
         }
     },

@@ -1,18 +1,12 @@
 import {Options} from 'vue-class-component';
-import template from "./layout.vue";
-import './layout.scss';
+import template from "./topBar.vue";
+import './topBar.scss';
 import BaseVue from '@/utils/base-vue';
-import SideNav from './sideNavBar';
-import TopBar from './topBar';
-import {ref} from "vue";
 
 @Options({
     mixins: [template],
-    name: 'Layouts',
-    components: {
-        SideNav,
-        TopBar,
-    },
+    name: 'TopBar',
+    components: {},
     provide() {
         return {
             changeView: this.sideSpread
@@ -20,7 +14,7 @@ import {ref} from "vue";
     }
 
 })
-export default class Layouts extends BaseVue {
+export default class TopBar extends BaseVue {
     public isSideSpread: boolean = true;
     public sideSpread: any = {};
     public routers: any = {};
@@ -36,7 +30,6 @@ export default class Layouts extends BaseVue {
     }
 
     public beforeCreate(): void {
-        this.treeRef = ref<any>();
     }
 
     public mounted() {
@@ -48,5 +41,15 @@ export default class Layouts extends BaseVue {
         this.routers = router;
     }
 
+    public toggleTheme() {
+        const htmlClasses = document.documentElement.classList;
+        if (htmlClasses.contains('dark')) {
+            htmlClasses.remove('dark');
+            localStorage.theme = 'light'; // 可选：将主题保存到本地存储中
+        } else {
+            htmlClasses.add('dark');
+            localStorage.theme = 'dark'; // 可选：将主题保存到本地存储中
+        }
+    }
 
 }

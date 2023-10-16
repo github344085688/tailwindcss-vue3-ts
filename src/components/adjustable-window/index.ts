@@ -13,10 +13,15 @@ import {forEach, clone} from 'lodash-es';
             type: String,
             default: ''
         },
+        height: {
+            type: String,
+            default: '30.625rem'
+        }
     }
 })
 export default class SimulationWindow extends BaseVue {
     public src!: string;
+    public height!: string;
     public width: any = 1216;
     public value: any = 100;
     public initializationWidth: any = 1216;
