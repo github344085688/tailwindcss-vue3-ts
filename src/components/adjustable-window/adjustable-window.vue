@@ -15,8 +15,8 @@
             ></div>
           </div>
           <div
-              :class="[dragSimulationWindow > 1 ? 'bg-indigo-50 text-indigo-600 ring-indigo-600' :'bg-gray-100 ring-gray-100']"
-              class="ml-1.5 rounded font-mono text-[0.625rem] leading-6 px-1.5  ring-inset dark:ring-0   dark:bg-indigo-500 dark:text-white dark:highlight-white/10">
+              :class="[dragSimulationWindow > 1 ? 'bg-indigo-50 text-indigo-600 dark:ring-indigo-600  dark:bg-indigo-500' :'bg-gray-100 ring-gray-100']"
+              class="ml-1.5 rounded font-mono text-[0.625rem] leading-6  px-3 py-2 ring-1 ring-inset dark:ring-0  dark:text-white bg-gray-100 ring-gray-100 dark:bg-gray-800 dark:highlight-white/5">
             sm
           </div>
         </div>
@@ -29,8 +29,8 @@
                 class="mt-[3px] w-[5px] h-[5px] shadow-sm rounded-full ring-1  "></div>
           </div>
           <div
-              :class="[dragSimulationWindow > 2 ? 'bg-indigo-50 text-indigo-600 ring-indigo-600' :'bg-gray-100 ring-gray-100']"
-              class="ml-1.5 rounded font-mono text-[0.625rem] leading-6 px-1.5 ring-1 ring-inset dark:ring-0  dark:bg-indigo-500 dark:text-white dark:highlight-white/10">
+              :class="[dragSimulationWindow > 2 ? 'bg-indigo-50 text-indigo-600 dark:ring-indigo-600  dark:bg-indigo-500' :'bg-gray-100 ring-gray-100']"
+              class="ml-1.5 rounded font-mono text-[0.625rem] leading-6  px-3 py-2 ring-1 ring-inset dark:ring-0  dark:text-white bg-gray-100 ring-gray-100 dark:bg-gray-800 dark:highlight-white/5">
             md
           </div>
         </div>
@@ -43,8 +43,8 @@
                 class="mt-[3px] w-[5px] h-[5px] shadow-sm rounded-full ring-1  "></div>
           </div>
           <div
-              :class="[dragSimulationWindow > 3 ? 'bg-indigo-50 text-indigo-600 ring-indigo-600' :'bg-gray-100 ring-gray-100']"
-              class="ml-1.5 rounded font-mono text-[0.625rem] leading-6 px-1.5 ring-1 ring-inset dark:ring-0  dark:bg-indigo-500 dark:text-white dark:highlight-white/10">
+              :class="[dragSimulationWindow > 3 ? 'bg-indigo-50 text-indigo-600 dark:ring-indigo-600  dark:bg-indigo-500' :'bg-gray-100 ring-gray-100']"
+              class="ml-1.5 rounded font-mono text-[0.625rem] leading-6  px-3 py-2 ring-1 ring-inset dark:ring-0  dark:text-white bg-gray-100 ring-gray-100 dark:bg-gray-800 dark:highlight-white/5">
             lg
           </div>
         </div>
@@ -55,7 +55,7 @@
                 class="mt-[3px] w-[5px] h-[5px] shadow-sm rounded-full ring-1 bg-white ring-gray-500/[0.15] dark:bg-gray-900 dark:ring-gray-700"></div>
           </div>
           <div
-              class="ml-1.5 rounded font-mono text-[0.625rem] leading-6 px-1.5 ring-1 ring-inset dark:ring-0 bg-gray-100 ring-gray-100 dark:bg-gray-800 dark:highlight-white/5">
+              class="ml-1.5 rounded font-mono text-[0.625rem] leading-6  px-3 py-2 ring-1 ring-inset dark:ring-0 bg-gray-100 ring-gray-100 dark:bg-gray-800 dark:highlight-white/5">
             xl
           </div>
         </div>
@@ -66,16 +66,18 @@
                 class="mt-[3px] w-[5px] h-[5px] shadow-sm rounded-full ring-1 bg-white ring-gray-500/[0.15] dark:bg-gray-900 dark:ring-gray-700"></div>
           </div>
           <div
-              class="ml-1.5 rounded font-mono text-[0.625rem] leading-6 px-1.5 ring-1 ring-inset dark:ring-0 bg-gray-100 ring-gray-100 dark:bg-gray-800 dark:highlight-white/5">
+              class="ml-1.5 rounded font-mono text-[0.625rem] leading-6  px-3 py-2 ring-1 ring-inset dark:ring-0 bg-gray-100 ring-gray-100 dark:bg-gray-800 dark:highlight-white/5">
             2xl
           </div>
         </div>
       </div>
     </div>
     <div class="relative pt-10 xl:pt-0 demo-sm:-mt-2.5">
-      <div class="absolute  top-[78px]  left-0 right-0 bottom-0  bg-grid-slate-l00 "></div>
+      <div class="absolute  top-[62px]  left-0 right-0 bottom-0  bg-grid-slate-l00 "></div>
       <div
-          class="absolute   inset-x-0 h-[37.5rem] bg-grid-gray-900/[0.04] bg-top [mask-image:linear-gradient(0deg,transparent,black)] dark:bg-grid-gray-100/[0.03] dark:bg-[center_top_-1px] dark:border-t dark:border-gray-100/5 top-[78px] "></div>
+          class="absolute   inset-x-0 h-[37.5rem] bg-grid-gray-900/[0.04] bg-top [mask-image:linear-gradient(0deg,transparent,black)]
+          dark:bg-grid-gray-100/[0.03]
+          dark:bg-[center_top_-1px] dark:border-t dark:border-gray-700 top-[72px] "></div>
       <div class="sm:px-2 demo-sm:-mt-24 xl:mt-0  h-full ">
         <div class="relative top-0  h-full ">
           <div class="max-w-7xl mx-auto sm:px-6 md:px-8  h-full ">
@@ -103,9 +105,9 @@
               <div :style="{ width: width + 'px'  }"
                    class="shadow-sm sm:rounded-xl  rounded-lg  demo-sm:min-w-0 demo-sm:max-w-none  h-full  "
               >
-                <div class="sm:rounded-xl border rounded-lg shadow-xl border-gray-200">
+                <div class="sm:rounded-xl border border-gray-200 dark:border-none  rounded-lg shadow-xl ">
                   <div
-                      class="rounded-t-lg rounded-r-lg border-gray-400 bg-gradient-to-b from-white to-[#FBFBFB] dark:bg-none dark:bg-gray-700 dark:highlight-white/10">
+                      class="rounded-t-lg rounded-r-lg border-gray-400 dark:border-none bg-gradient-to-b from-white to-[#FBFBFB] dark:bg-none dark:bg-gray-700 dark:highlight-white/10">
                     <div class="py-2.5 grid items-center px-4 gap-8"
                          style="grid-template-columns: 7.125rem 1fr 7.125rem;">
                       <div class="flex items-center">
@@ -125,7 +127,7 @@
                       </div>
                       <div>
                         <div
-                            class="bg-gray-100 rounded  font-medium text-xs leading-6 py-1 flex items-center justify-center border border-gray-200 ring-inset ring-gray-900/5 mx-auto w-4/5 dark:bg-gray-800 dark:text-gray-500">
+                            class="bg-gray-100 rounded  font-medium text-xs leading-6 py-1 flex items-center justify-center dark:border-none border border-gray-200 ring-inset ring-gray-900/5 mx-auto w-4/5 dark:bg-gray-800 dark:text-gray-500">
                           <svg class="text-gray-300 w-3.5 h-3.5 mr-1.5 dark:text-gray-500" fill="currentColor"
                                viewBox="0 0 20 20">
                             <path clip-rule="evenodd"
@@ -147,7 +149,7 @@
                     </div>
                     <div class="grid grid-cols-3 text-xs leading-5 overflow-hidden">
                       <div
-                          class="pointer-events-none select-none bg-gray-100 text-gray-400 rounded-tr border border-gray-900/5 px-4 py-1.5 -mb-px -ml-px flex items-center justify-center space-x-2 dark:bg-gray-800 dark:text-gray-500">
+                          class="pointer-events-none select-none bg-gray-100 text-gray-400 rounded-tr  dark:border-none border border-gray-900/5 px-4 py-1.5 -mb-px -ml-px flex items-center justify-center space-x-2 dark:bg-gray-800 dark:text-gray-500">
                         <svg class="flex-none text-gray-300 dark:text-gray-500" fill="currentColor" height="10"
                              width="17">
                           <path clip-rule="evenodd"
@@ -169,7 +171,7 @@
                         <div class="truncate">UNIS-UI - Find a trip that suits you</div>
                       </div>
                       <div
-                          class="pointer-events-none select-none bg-gray-100 text-gray-400 rounded-tl border border-gray-900/5 pl-4 pr-8 py-1.5 -mb-px -mr-4 flex items-center justify-center space-x-2 dark:bg-gray-800 dark:text-gray-500">
+                          class="pointer-events-none select-none bg-gray-100 text-gray-400 rounded-tl  dark:border-none border border-gray-900/5 pl-4 pr-8 py-1.5 -mb-px -mr-4 flex items-center justify-center space-x-2 dark:bg-gray-800 dark:text-gray-500">
                         <svg class="flex-none text-gray-300 dark:text-gray-500" fill="currentColor" height="16"
                              width="15">
                           <path
@@ -185,7 +187,7 @@
                     </div>
                   </div>
                   <div
-                      class="relative bg-white border-t border-gray-200 rounded-b-lg  dark:bg-gray-800 dark:border-gray-900/50">
+                      class="relative bg-white border-t rounded-b-lg    dark:bg-gray-800 dark:border-gray-700 ">
                     <slot></slot>
                     <iframe :src="src" :style="{'height':height}" class="w-full "
                             style="pointer-events: auto;"

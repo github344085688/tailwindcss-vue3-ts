@@ -15,12 +15,6 @@ module.exports = {
                 'initial': 'initial',
             },
         },
-        dark: {
-            primary: '#000000', // 暗黑主题的自定义颜色
-        },
-        light: {
-            primary: '#ffffff', // 亮主题的自定义颜色
-        },
         screens: {
             'sm': '640px',
             'md': '768px',
@@ -37,7 +31,7 @@ module.exports = {
         colors: {
             theme: {
                 light: '#ffffff', // light 主题的背景颜色
-                dark: '#1A1A1A', // dark 主题的背景颜色
+                dark: '#0b1120', // dark 主题的背景颜色
             },
             transparent: 'transparent',
             current: 'currentColor',
@@ -52,11 +46,9 @@ module.exports = {
             sky: colors.sky,
             lap: {
                 'text': '#006ED0',
-                'bg': '#CCE2F6',
             },
             dap: {
                 'text': '#338BD9',
-                'bg': '#2D4354',
             },
             dark: {
                 DEFAULT: '#0E1419',
@@ -66,9 +58,9 @@ module.exports = {
                 '300': '#d1d5db',
                 '400': '#9ca3af',
                 '500': '#6b7280',
-                '600': '#4b5563',
-                '700': '#374151',
-                '800': '#1f2937',
+                '600': '#2D4354',//
+                '700': '#324347',//
+                '800': '#444545',//
                 '900': '#111827',
                 '950': '#030712'
             },
@@ -76,9 +68,9 @@ module.exports = {
                 DEFAULT: '#f0f1f5',
                 '50': '#f9fafb',
                 '100': '#f3f4f6',
-                '200': '#e5e7eb',
-                '300': '#F2F2F7',
-                '400': '#9ca3af',
+                '200': '#CCE2F6',//
+                '300': '#e9f0f2',//
+                '400': '#b6ced3',//
                 '500': '#6b7280',
                 '600': '#4b5563',
                 '700': '#374151',

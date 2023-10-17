@@ -50,12 +50,13 @@ export default class SideNavigation extends BaseVue {
         if (item.path && item.name) this.setRouter({name: item.name});
     }
 
-    public foldChildetails(event: any, item: any): void {
+    public foldChildetails(event: any, item: any, father: any): void {
         let botton: any = event.target.parentNode.parentNode.parentNode;
         if (botton) {
             botton.blur();
         }
         this.itemChildsLink = item.name;
+        this.navName = father.title;
         if (item.path && item.name) this.setRouter({name: item.name});
     }
 
@@ -73,7 +74,6 @@ export default class SideNavigation extends BaseVue {
                     if (children.children && isArray(children.children)) {
                         forEach(children.children, chi => {
                             if (chi.isPrivate) children.children = children.children.filter((item: any) => item !== chi);
-                            console.log(chi);
                         })
                     }
                 })

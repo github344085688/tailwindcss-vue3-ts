@@ -1,5 +1,5 @@
 <template>
-  <div class=" w-full">
+  <div class=" w-full ">
     <!--    <div class="grid grid-flow-col grid-rows-2 grid-cols-3 gap-8  ">
           <div>
             <img alt="" loading="lazy" src="@/assets/img/1.4985e539.jpg">
@@ -18,6 +18,12 @@
           </div>
         </div>-->
     <!--    :src="'/navigationExample'"-->
+
+    <div class="p-5 ml-5">
+      <basic-button disabled>Back</basic-button>
+    </div>
+
+
     <adjustable-window :height=" '700px'"/>
 
 

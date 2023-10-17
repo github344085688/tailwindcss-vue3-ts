@@ -1,0 +1,32 @@
+<template>
+  <button
+      class="
+      font-mono
+      dark:ring-0
+      rounded
+      min-w-0-[98px]
+      px-4
+      h-[40px]
+      font-bold
+      flex
+      items-center
+      justify-center
+      text-center
+      bg-light-200
+      text-dark-800
+      dark:bg-dark-700
+      dark:text-light-300
+      hover:bg-light-400
+      transition-colors
+      duration-500
+      disabled:bg-gray-300
+      disabled:text-gray-500
+      disabled:dark:bg-gray-600
+      disabled:dark:text-gray-400
+      disabled:cursor-not-allowed
+">
+    <slot></slot>
+
+  </button>
+</template>
+
