@@ -46,9 +46,13 @@ module.exports = {
             sky: colors.sky,
             lap: {
                 'text': '#006ED0',
+                'bg': '#CCE2F6',
+                're': '#e9f0f2',
             },
             dap: {
                 'text': '#338BD9',
+                'bg': '#2D4354',
+                're': '#324347',
             },
             dark: {
                 DEFAULT: '#0E1419',

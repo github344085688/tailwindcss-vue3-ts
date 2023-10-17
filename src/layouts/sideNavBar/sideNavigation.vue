@@ -531,7 +531,10 @@
                             sm:pt-[0px]
                             sm:pl-[0px]
                             sm:pb-[0px]
-
+                            sm:max-h-[350px]
+                            overflow-hidden
+                            sm:overflow-y-auto
+                            sm:overflow-x-hidden
                             scrollbar
                             group-[.parent-level-small]:absolute
                             group-[.parent-level-small]:hidden
