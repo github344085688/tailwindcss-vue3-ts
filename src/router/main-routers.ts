@@ -63,9 +63,7 @@ const SideNavConfig: Array<SideNavList> = [
                         parentName: "TMS",
                         path: "TMS/invoices",
                         name: "Invoices",
-                        component: Invoices,
                         title: "Invoices",
-                        // redirect: { name: "Service" },
                         children: [
                             {
                                 path: "invoices-list",
@@ -110,74 +108,21 @@ const SideNavConfig: Array<SideNavList> = [
                     {
                         parentName: "TMS",
                         path: "TMS/invoice-history",
-                        name: "InvoiceHistory",
+                        name: "InvoiceHsistory",
                         component: InvoiceHistory,
                         title: "Invoice History",
-                        children: [
-                            {
-                                path: "invoices-lists",
-                                name: "InvoicesLists",
-                                title: "InvoicesLists",
-                                component: InvoicesList,
-                            },
-                            {
-                                path: "import-export",
-                                name: "ImportExport",
-                                title: "ImportExport",
-                                component: ImportExport,
-                            },
-                            {
-                                path: "export",
-                                name: "Export",
-                                title: "Export",
-                                component: Export,
-                            },
-                        ],
                     },
                     {
                         parentName: "TMS",
                         path: "TMS/invoice-history",
-                        name: "InvoiceHistorya",
+                        name: "InvoiceasHistorya",
                         component: InvoiceHistory,
                         title: "Invoice Historya",
-                        children: [
-                            {
-                                path: "invoices-listss",
-                                name: "InvoicesListss",
-                                title: "InvoicesListss",
-                                component: InvoicesList,
-                            },
-                            {
-                                path: "import-exportq",
-                                name: "ImportExportq",
-                                title: "ImportExportq",
-                                component: ImportExport,
-                            },
-                            {
-                                path: "exportw",
-                                name: "Exporte",
-                                title: "Exporte",
-                                component: Export,
-                            },
-                            {
-                                path: "exportw",
-                                name: "Exporte",
-                                title: "Exporte",
-                                component: Export,
-                            },
-                            {
-                                path: "exportw",
-                                name: "Exporte",
-                                title: "Exporte",
-                                component: Export,
-                            },
-                        ],
                     },
                     {
                         parentName: "TMS",
                         path: "TMS/invoice-history",
-                        name: "exportw",
-                        component: InvoiceHistory,
+                        name: "Exporte",
                         title: "Exporte",
                         children: [
                             {
@@ -216,7 +161,6 @@ const SideNavConfig: Array<SideNavList> = [
                         parentName: "TMS",
                         path: "TMS/invoice-history",
                         name: "Import",
-                        component: InvoiceHistory,
                         title: "Import",
                         children: [
                             {
@@ -266,7 +210,6 @@ const SideNavConfig: Array<SideNavList> = [
                         path: "invoices-list",
                         name: "InvoicesList",
                         title: "InvoicesList",
-                        component: InvoicesList,
                         children: [
                             {
                                 path: "invoices-lists",
@@ -289,7 +232,7 @@ const SideNavConfig: Array<SideNavList> = [
                         ],
                     },
                     {
-                        path: "import-export",
+                        path: "Service/import-export",
                         name: "ImportExport",
                         title: "ImportExport",
                         component: ImportExport,

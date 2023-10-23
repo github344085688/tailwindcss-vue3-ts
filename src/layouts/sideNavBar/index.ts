@@ -4,23 +4,27 @@ import "./sideNavigation.scss";
 import BaseVue from "@/utils/base-vue";
 import SideNavConfig from "@/router/main-routers";
 import {find, forEach, cloneDeep, isArray} from "lodash-es";
+import groupName from "./groupName";
+
 
 @Options({
     mixins: [template],
     name: "SideNav",
-    components: {},
+    components: {
+        groupName,
+    },
     props: {
         sideSpread: {},
     },
 })
 export default class SideNavigation extends BaseVue {
     public changeView!: any;
-
-    public itemChildsLink: string = "Invoices";
+    public firstNavName: string = "Dashboard";
+    public itemChildsLink: string = " ";
+    public fourthItemActiveName: string = " ";
     public isFold: boolean = false;
     public isLevelSmall: boolean = false;
     public isFoldDetails: boolean = false;
-    public navName: string = "TMS";
     public isClickParentLevel: boolean = false;
     public navLink: Array<any> = [];
 
@@ -43,10 +47,10 @@ export default class SideNavigation extends BaseVue {
     }
 
     public foldDetails(isFoldDetails: any, item: any): void {
-        if (this.navName == item.title) {
-            this.navName = "";
+        if (this.firstNavName == item.title) {
+            this.firstNavName = "";
             return;
-        } else this.navName = item.title;
+        } else this.firstNavName = item.title;
         if (item.path && item.name) this.setRouter({name: item.name});
     }
 
@@ -56,8 +60,8 @@ export default class SideNavigation extends BaseVue {
             botton.blur();
         }
         this.itemChildsLink = item.name;
-        this.navName = father.title;
-        if (item.path && item.name) this.setRouter({name: item.name});
+        this.firstNavName = father.title;
+        if (item.component && item.path && item.name) this.setRouter({name: item.name});
     }
 
     public logOut(): void {
