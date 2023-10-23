@@ -3,6 +3,7 @@ import template from "./dashboard.vue";
 import BaseVue from "@/utils/base-vue";
 import {marked} from "marked";
 import hljs from "highlight.js";
+import "./dashboard.scss";
 import hljsVuePlugin from "@highlightjs/vue-plugin";
 import AdjustableWindow from "@/components/adjustable-window";
 

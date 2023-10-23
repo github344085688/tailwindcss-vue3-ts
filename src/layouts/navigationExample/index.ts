@@ -2,6 +2,8 @@ import {Options} from "vue-class-component";
 import template from "./navigationExample.vue";
 import "./navigationExample.scss";
 import BaseVue from "@/utils/base-vue";
+import groupName from "./groupName";
+import secondItems from "./secondItems";
 import SideNavConfig from "@/router/main-routers";
 import {find, forEach, cloneDeep, isArray} from "lodash-es";
 import Dashboard from "@/layouts/dashboard";
@@ -15,121 +17,24 @@ import Service from "@/layouts/service";
 @Options({
     mixins: [template],
     name: "SideNav",
-    components: {},
+    components: {
+        groupName,
+        secondItems
+    },
     props: {
         sideSpread: {},
     },
 })
-export default class SideNavigation extends BaseVue {
+export default class NavigationExample extends BaseVue {
     public changeView!: any;
-    public SideNavConfig: Array<any> = [
-        {
-            groupName: "",
-            children: [
-                {
-                    title: "Dashboard",
-                    name: "Dashboard",
-                    path: "dashboard",
-                    icon: require("@/assets/img/dashboard.svg"),
-                    children: [],
-                }
-            ],
-        },
-        {
-            groupName: "MAIN MENU",
-            children: [
-                {
-                    title: "TMS",
-                    name: "TMS",
-                    icon: require("@/assets/img/tms2.svg"),
-                    children: [
-                        {
-                            parentName: "TMS",
-                            path: "TMS/invoices",
-                            name: "Invoices",
-                            title: "Invoices",
-                            // redirect: { name: "Service" },
-                            children: [
-                                {
-                                    path: "invoices-list",
-                                    name: "InvoicesList",
-                                },
-                                {
-                                    path: "import-export",
-                                    name: "ImportExport",
-                                },
-                                {
-                                    path: "export",
-                                    name: "Export",
-                                },
-                            ],
-                        },
-                        {
-                            parentName: "TMS",
-                            path: "TMS/invoice-history",
-                            name: "InvoiceHistory",
-                            title: "Invoice History",
-                        },
-                    ],
-                },
-                {
-                    title: "Service",
-                    name: "Service",
-                    path: "service",
-                    icon: require("@/assets/img/service.svg"),
-                },
-            ],
-        },
-        {
-            groupName: "MY BUSINESS",
-            children: [
-                {
-                    title: "Payments ",
-                    name: "Payments",
-                    icon: require("@/assets/img/brokerage.svg"),
-                    children: [
-                        {
-                            parentName: "Payments",
-                            path: "payments/business",
-                            name: "Business",
-                            title: "Business",
-                        },
-                        {
-                            parentName: "Payments",
-                            path: "payments/invoice-history",
-                            name: "businessHistory",
-                            title: "Business History",
-                        },
-                    ],
-                },
-                {
-                    title: "Business Info  ",
-                    name: "BusinessInfo",
-                    icon: require("@/assets/img/payments.svg"),
-                },
-            ],
-        },
-        {
-            groupName: "GENERAL",
-            children: [
-                {
-                    title: "Message Center ",
-                    name: "MessageCenter",
-                    icon: require("@/assets/img/businessInfo.svg"),
-                },
-                {
-                    title: "Settings",
-                    name: "Settings",
-                    icon: require("@/assets/img/MessageCenter.svg"),
-                },
-            ],
-        },
-    ];
+
     public itemChildsLink: string = "Invoices";
     public isFold: boolean = false;
     public isLevelSmall: boolean = false;
     public isFoldDetails: boolean = false;
     public navName: string = "TMS";
+    public fourthItemActiveName: string = "";
+
     public isClickParentLevel: boolean = false;
     public navLink: Array<any> = [];
 
@@ -138,6 +43,7 @@ export default class SideNavigation extends BaseVue {
 
     public mounted(): void {
         this.navLink = this.filterNavigations();
+
 
     }
 
@@ -155,16 +61,17 @@ export default class SideNavigation extends BaseVue {
             this.navName = "";
             return;
         } else this.navName = item.title;
-        if (item.path && item.name) this.setRouter({name: item.name});
+        // if (item.path && item.name) this.setRouter({name: item.name});
     }
 
-    public foldChildetails(event: any, item: any): void {
+    public foldChildetails(event: any, item: any, father: any): void {
         let botton: any = event.target.parentNode.parentNode.parentNode;
         if (botton) {
             botton.blur();
         }
-        this.itemChildsLink = item.name;
-        if (item.path && item.name) this.setRouter({name: item.name});
+        this.itemChildsLink = item.title;
+        this.navName = father.title;
+        // if (item.path && item.name) this.setRouter({name: item.name});
     }
 
     public logOut(): void {
@@ -172,7 +79,7 @@ export default class SideNavigation extends BaseVue {
     }
 
     private filterNavigations() {
-        let privateSideNavConfig = cloneDeep(this.SideNavConfig);
+        let privateSideNavConfig = cloneDeep(SideNavConfig);
         forEach(privateSideNavConfig, (nav: any) => {
 
             if (nav.children && isArray(nav.children)) {
@@ -181,7 +88,6 @@ export default class SideNavigation extends BaseVue {
                     if (children.children && isArray(children.children)) {
                         forEach(children.children, chi => {
                             if (chi.isPrivate) children.children = children.children.filter((item: any) => item !== chi);
-                            console.log(chi);
                         })
                     }
                 })

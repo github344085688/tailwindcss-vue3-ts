@@ -1,26 +1,16 @@
 <template>
-  <div :class="themeClass" class="flex h-full ">
+  <div class="flex h-full ">
     <side-nav/>
-    <div class="flex-1 p-0">
-      <div class="d-flex flex-column h-100">
-        <top-bar/>
-        <div class="component-view">
-          <router-view v-slot="{ Component, route }">
-            <keep-alive>
-              <component :is="Component" :key="route.path" :ref="treeRef" :init="changeView(route)"/>
-            </keep-alive>
-          </router-view>
-
-        </div>
+    <div class="flex-1 p-0 h-full  flex flex-col">
+      <top-bar/>
+      <div class="component-vie overflow-y-auto scrollbar">
+        <router-view v-slot="{ Component, route }">
+          <keep-alive>
+            <component :is="Component" :key="route.path" :ref="treeRef" :init="changeView(route)"/>
+          </keep-alive>
+        </router-view>
       </div>
     </div>
-
   </div>
-  <!--    <section class="top-bar" :class="[isSideSpread?'':'side-spread']">-->
-  <!--      -->
-  <!--    </section>-->
 
-  <!--    <section class="main-section roll-background px-5" :class="[isSideSpread?'':'side-spread']">-->
-  <!--            -->
-  <!--    </section>-->
 </template>

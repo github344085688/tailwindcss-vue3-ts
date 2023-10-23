@@ -12,17 +12,12 @@
       items-center
       justify-center
       text-center
-      bg-secondary-800
-      text-dark-800
-      dark:bg-secondary-800
-      hover:bg-light-400
       text-primary-800
       dark:text-primary-400
       transition-colors
       duration-500
       disabled:bg-gray-300
-      disabled:text-gray-500
-      disabled:dark:bg-gray-600
+      disabled:text-gray-
       disabled:dark:text-gray-400
       disabled:cursor-not-allowed
 ">
