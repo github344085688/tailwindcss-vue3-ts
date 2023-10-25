@@ -41,11 +41,39 @@ body {
 }
 
 
-.svg-icon {
-  filter: drop-shadow(#26876c 2px 0);
-  fill: red;
-  border-top: 1px solid inherit;
-  
+.sn_menu li {
+  @apply grid grid-rows-[42px,0fr]  w-full  ;
+  transition: 0.75s;
 }
+
+.sn_menu {
+  .secondItem {
+    &:last-child {
+      .beforeLine {
+        @apply before:bottom-[49%];
+      }
+    }
+  }
+
+  .thirdItem {
+    &:last-child {
+      .beforeLines {
+        @apply before:bottom-[49%];
+      }
+    }
+  }
+}
+
+.sn_menu li ul {
+  min-height: 0;
+
+}
+
+
+.sn_menu li.active {
+  grid-template-rows:42px 1fr;
+}
+
+
 
 

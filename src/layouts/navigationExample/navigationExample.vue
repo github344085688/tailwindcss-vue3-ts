@@ -80,18 +80,18 @@
                 group-hover/firstItemLi:block
             ">
               <li v-for="(secondItem,secondIndex) in firstItem.children" :key="secondIndex"
-                  :class="[itemChildsLink == secondItem.title?'secondItemActive active ':'' ,
+                  :class="[isecondNavName == secondItem.title?'secondItemActive active ':'' ,
                   (secondIndex != firstItem.children.length-1)? 'relative  group-[.fold]:before:content-none sm:before:content-baseline sm:before:content-open-quote  sm:before:absolute sm:before:bg-primary-400  sm:before:left-[25px] sm:before:w-[1px]  sm:before:top-0  sm:before:bottom-0 ':'beforeUnderline'
                   ]"
                   class="secondItem
                   overflow-hidden
                   group
                   group-[.fold]:w-[15rem]
-
+                  pr-[4px]
 ">
                 <div
 
-                    class=" group-[.fold]:before:content-none relative  beforeLine h-full  pl-[35px]  pr-[4px]  sm:before:content-baseline  sm:before:content-open-quote  sm:before:absolute   sm:before:bg-primary-400 sm:before:left-[25px] sm:before:w-[1px] sm:before:top-0  sm:before:bottom-0
+                    class=" group-[.fold]:before:content-none relative  beforeLine h-full  pl-[35px]    sm:before:content-baseline  sm:before:content-open-quote  sm:before:absolute   sm:before:bg-primary-400 sm:before:left-[25px] sm:before:w-[1px] sm:before:top-0  sm:before:bottom-0
                    "
                     tabindex="-1"
                     @click.stop.prevent="foldChildetails($event,secondItem,firstItem)">
@@ -131,19 +131,14 @@
 
                 <ul v-if="secondItem.children && secondItem.children.length>0" class="
                   peer-[.secondItemActive]:relative
-                  group-hover/firstItemLi:bg-primary-300
-                  group-hover/firstItemLi:dark:bg-primary-800
-                  group-hover/firstItemLi:mr-[4px]
-                  ml-[38px]
-">
+                  ml-[34px]">
                   <li v-for="thirdItem in secondItem.children"
-                      :class="{'group fourthItemActive active':fourthItemActiveName   == thirdItem.title }"
+                      :class="{'group fourthItemActive active':thirdNavName   == thirdItem.title }"
                       class="thirdItem overflow-hidden group-[.fold]:overflow-inherit">
                     <div class="
                   beforeLines
                   h-full
                   pl-[20px]
-                  pr-[4px]
                   relative
                   box-content
                   before:content-baseline
@@ -156,6 +151,8 @@
                   before:bottom-0
                   text-primary-800
                   dark:text-primary-300
+                  group-hover/firstItemLi:bg-primary-300
+                  group-hover/firstItemLi:dark:bg-primary-800
                   " tabindex="-1">
                       <div class="line
                           block

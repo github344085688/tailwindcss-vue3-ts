@@ -2,7 +2,7 @@
  * Created by f on 2022/9/28.
  */
 
-import Dashboard from "@/layouts/dashboard";
+// import Dashboard from "@/layouts/dashboard";
 import Invoices from "@/layouts/invoices";
 import InvoicesList from "@/layouts/invoices/invoices-list";
 import ImportExport from "@/layouts/invoices/import-export";
@@ -34,7 +34,7 @@ const SideNavConfig: Array<SideNavList> = [
                 title: "Dashboard",
                 name: "Dashboard",
                 path: "dashboard",
-                component: Dashboard,
+                component: async () => await import('@/layouts/dashboard'),
                 icon: `<svg width="24" height="24" class="fill-color" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M3 13H11V3H3V13ZM3 21H11V15H3V21ZM13 21H21V11H13V21ZM13 3V9H21V3H13Z"/>
                         </svg>`,
@@ -44,7 +44,7 @@ const SideNavConfig: Array<SideNavList> = [
                 title: "NavigationExample",
                 name: "NavigationExample",
                 path: "navigationExample",
-                component: NavigationExample,
+                component: async () => await import('@/layouts/navigationExample'),
                 isPrivate: true,
             },
         ],
@@ -69,19 +69,19 @@ const SideNavConfig: Array<SideNavList> = [
                                 path: "invoices-list",
                                 name: "InvoicesList",
                                 title: "InvoicesList",
-                                component: InvoicesList,
+                                component: async () => await import('@/layouts/invoices'),
                                 children: [
                                     {
                                         path: "invoices-lists",
                                         name: "InvoicesLists",
                                         title: "InvoicesLists",
-                                        component: InvoicesList,
+                                        component: async () => await import('@/layouts/invoices/invoices-list'),
                                     },
                                     {
                                         path: "import-export",
                                         name: "ImportExport",
                                         title: "ImportExport",
-                                        component: ImportExport,
+                                        component: async () => await import('@/layouts/invoices/import-export'),
                                     },
                                     {
                                         path: "export",

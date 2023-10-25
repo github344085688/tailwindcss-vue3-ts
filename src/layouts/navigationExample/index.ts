@@ -1,18 +1,10 @@
 import {Options} from "vue-class-component";
 import template from "./navigationExample.vue";
-import "./navigationExample.scss";
 import BaseVue from "@/utils/base-vue";
 import groupName from "./groupName";
 import secondItems from "./secondItems";
 import SideNavConfig from "@/router/main-routers";
 import {find, forEach, cloneDeep, isArray} from "lodash-es";
-import Dashboard from "@/layouts/dashboard";
-import Invoices from "@/layouts/invoices";
-import InvoicesList from "@/layouts/invoices/invoices-list";
-import ImportExport from "@/layouts/invoices/import-export";
-import Export from "@/layouts/invoices/export";
-import InvoiceHistory from "@/layouts/invoice-history";
-import Service from "@/layouts/service";
 
 @Options({
     mixins: [template],

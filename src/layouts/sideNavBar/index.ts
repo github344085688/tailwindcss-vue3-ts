@@ -1,6 +1,5 @@
 import {Options} from "vue-class-component";
 import template from "./sideNavigation.vue";
-import "./sideNavigation.scss";
 import BaseVue from "@/utils/base-vue";
 import SideNavConfig from "@/router/main-routers";
 import {find, forEach, cloneDeep, isArray} from "lodash-es";
@@ -19,13 +18,12 @@ import groupName from "./groupName";
 })
 export default class SideNavigation extends BaseVue {
     public changeView!: any;
-    public firstNavName: string = "Dashboard";
-    public itemChildsLink: string = " ";
-    public fourthItemActiveName: string = " ";
+    public firstNavName: string = "TMS";
+    public secondNavName: string = "Invoices";
+    public thirdNavName: string = "InvoicesList";
     public isFold: boolean = false;
     public isLevelSmall: boolean = false;
     public isFoldDetails: boolean = false;
-    public isClickParentLevel: boolean = false;
     public navLink: Array<any> = [];
 
     public countSideSpread(value: number, oldValue: number): void {
@@ -59,7 +57,7 @@ export default class SideNavigation extends BaseVue {
         if (botton) {
             botton.blur();
         }
-        this.itemChildsLink = item.name;
+        this.secondNavName = item.name;
         this.firstNavName = father.title;
         if (item.component && item.path && item.name) this.setRouter({name: item.name});
     }
