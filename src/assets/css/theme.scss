@@ -13,7 +13,7 @@ body {
 
 
 .fill-color {
-  @apply fill-gray-400  group-[.active]:fill-secondary-800 dark:fill-primary-400 dark:hover:fill-secondary-800
+  @apply fill-gray-400 group-hover/firstNavName:fill-accent-400  group-[.active]:fill-accent-400  group-[.active]:dark:fill-accent-400 dark:fill-secondary-200 dark:hover:fill-secondary-200  transition-colors  duration-500
 }
 
 .child-item {

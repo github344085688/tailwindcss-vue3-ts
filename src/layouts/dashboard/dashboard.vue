@@ -1,5 +1,15 @@
 <template>
   <div class=" w-full ">
+    <!--    <div class="m-20 relative">-->
+    <!--      <div-->
+    <!--          class="absolute h-40 w-40   inset-x-0 h-[37.5rem]-->
+    <!--          dark:bg-grid-gray-100/[0.5]   dark:high-shadow-gray-100/[0.5] ">asda-->
+
+    <!--      </div>-->
+
+    <!--    </div>-->
+
+
     <!--    <div class="h-[900px] w-3/4 ml-[50px] mt-[50px] ">-->
     <!--      <sideNavigation></sideNavigation>-->
     <!--    </div>-->

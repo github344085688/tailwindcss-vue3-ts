@@ -15,6 +15,7 @@ import {Switch} from '@headlessui/vue'
     mixins: [template],
     name: "Dashboard",
     components: {
+        AdjustableWindow,
         Popover,
         PopoverButton,
         PopoverPanel,
@@ -26,7 +27,7 @@ import {Switch} from '@headlessui/vue'
 export default class Dashboard extends BaseVue {
     public isSideSpread: boolean = true;
     public markedHtml: string = "";
-    public enabled: boolean = false;
+    public enabled: boolean = true;
     public htmlGrildCode: string = '';
     public sideSpread: any = {};
     public routers: any = {};
@@ -123,6 +124,10 @@ export default class Dashboard extends BaseVue {
         this.isSideSpread = isSpread;
 
 
+    }
+
+    public handleSwitchChange(aa: any) {
+        alert('ss');
     }
 
 }

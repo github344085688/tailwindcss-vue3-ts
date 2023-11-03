@@ -4,6 +4,7 @@ import BaseVue from "@/utils/base-vue";
 import SideNavConfig from "@/router/main-routers";
 import {find, forEach, cloneDeep, isArray} from "lodash-es";
 import groupName from "./groupName";
+import {filterRouterTopMap} from "@/utils/utils";
 
 
 @Options({
@@ -31,8 +32,6 @@ export default class SideNavigation extends BaseVue {
 
     public mounted(): void {
         this.navLink = this.filterNavigations();
-
-
     }
 
     public togoaside(isfold: any): void {
@@ -45,22 +44,22 @@ export default class SideNavigation extends BaseVue {
     }
 
     public foldDetails(isFoldDetails: any, item: any): void {
-        if (this.firstNavName == item.title) {
+        if (this.firstNavName == item.name) {
             this.firstNavName = "";
             return;
-        } else this.firstNavName = item.title;
-        if (item.path && item.name) this.setRouter({name: item.name});
+        } else this.firstNavName = item.name;
+        if (item.component && item.path && item.name) this.setRouter({name: item.name});
     }
 
     public foldChildetails(event: any, item: any, father: any): void {
-        let botton: any = event.target.parentNode.parentNode.parentNode;
-        if (botton) {
-            botton.blur();
+        if (item.children && item.children.length > 0) {
+            this.secondNavName = item.name;
+            this.firstNavName = father.name;
         }
-        this.secondNavName = item.name;
-        this.firstNavName = father.title;
+        this.thirdNavName = item.name;
         if (item.component && item.path && item.name) this.setRouter({name: item.name});
     }
+
 
     public logOut(): void {
         this.setRouter({name: "SignIn"});
@@ -69,7 +68,6 @@ export default class SideNavigation extends BaseVue {
     private filterNavigations() {
         let privateSideNavConfig = cloneDeep(SideNavConfig);
         forEach(privateSideNavConfig, (nav: any) => {
-
             if (nav.children && isArray(nav.children)) {
                 forEach(nav.children, children => {
                     if (children.isPrivate) nav.children = nav.children.filter((item: any) => item !== children);

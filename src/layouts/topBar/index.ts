@@ -1,6 +1,5 @@
 import {Options} from 'vue-class-component';
 import template from "./topBar.vue";
-import './topBar.scss';
 import BaseVue from '@/utils/base-vue';
 import {Popover, PopoverButton, PopoverPanel} from '@headlessui/vue'
 import {ChevronDownIcon} from '@heroicons/vue/20/solid'
@@ -25,13 +24,14 @@ import {Switch} from '@headlessui/vue'
 })
 export default class TopBar extends BaseVue {
     public isSideSpread: boolean = true;
+    public enabled: boolean = false;
     public sideSpread: any = {};
     public routers: any = {};
     public treeRef: any;
     public solutions = [
         {
             name: 'Insights',
-            description: 'Measure actions your users take',
+            description: 'Measure actions  ',
             href: '##',
             icon: `
       <svg
@@ -67,7 +67,7 @@ export default class TopBar extends BaseVue {
         },
         {
             name: 'Automations',
-            description: 'Create your own targeted content',
+            description: 'Create your own  ',
             href: '##',
             icon: `
       <svg
@@ -95,7 +95,7 @@ export default class TopBar extends BaseVue {
         },
         {
             name: 'Reports',
-            description: 'Keep track of your growth',
+            description: 'Keep track',
             href: '##',
             icon: `
       <svg
@@ -131,7 +131,22 @@ export default class TopBar extends BaseVue {
     }
 
     public mounted() {
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+            this.enabled = true;
+        } else {
+            document.documentElement.classList.remove('dark');
+            this.enabled = false;
+        }
 
+// // Whenever the user explicitly chooses light mode
+//         localStorage.theme = 'light'
+//
+// // Whenever the user explicitly chooses dark mode
+//         localStorage.theme = 'dark'
+
+// Whenever the user explicitly chooses to respect the OS preference
+//         localStorage.removeItem('theme')
 
     }
 
@@ -139,7 +154,8 @@ export default class TopBar extends BaseVue {
         this.routers = router;
     }
 
-    public toggleTheme() {
+    public toggleTheme(value: any) {
+        this.enabled = !this.enabled;
         const htmlClasses = document.documentElement.classList;
         if (htmlClasses.contains('dark')) {
             htmlClasses.remove('dark');

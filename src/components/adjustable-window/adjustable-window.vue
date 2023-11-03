@@ -1,7 +1,6 @@
 <template>
   <section id="mobile-first bg-indigo  ">
 
-
     <div
         class=" mt-16 mb-12 border-b border-gray-100 xl:mb-0 demo-sm:block dark:border-gray-800 h-20 overflow-x-hidden overflow-y-visible">
       <div class="mb-[-3px] flex max-w-7xl mx-auto px-6 sm:px-8 md:px-10">
@@ -73,11 +72,11 @@
       </div>
     </div>
     <div class="relative pt-10 xl:pt-0 demo-sm:-mt-2.5">
-      <div class="absolute  top-[72px]  left-0 right-0 bottom-0  bg-grid-slate-l00 "></div>
+      <div class="absolute  top-[86px]  left-0 right-0 bottom-0  bg-grid-slate-l00 "></div>
       <div
           class="absolute   inset-x-0 h-[37.5rem] bg-grid-gray-900/[0.04] bg-top [mask-image:linear-gradient(0deg,transparent,black)]
           dark:bg-grid-gray-100/[0.03]
-          dark:bg-[center_top_-1px] dark:border-t dark:border-gray-700 top-[72px] "></div>
+          dark:bg-[center_top_-1px] dark:border-t dark:border-gray-700 top-[86px] "></div>
       <div class="sm:px-2 demo-sm:-mt-24 xl:mt-0  h-full ">
         <div class="relative top-0  h-full ">
           <div class="max-w-7xl mx-auto sm:px-6 md:px-8  h-full ">
@@ -107,7 +106,7 @@
               >
                 <div class="sm:rounded-xl border border-gray-200 dark:border-none  rounded-lg shadow-xl ">
                   <div
-                      class="rounded-t-lg rounded-r-lg border-gray-400 dark:border-none bg-gradient-to-b from-white to-[#FBFBFB] dark:bg-none dark:bg-primary-800 dark:highlight-white/10">
+                      class="rounded-t-lg rounded-r-lg border-gray-400 dark:border-none bg-gradient-to-b from-white to-[#FBFBFB] dark:bg-none dark:bg-primary-800 dark:highlight-white/10     ">
                     <div class="py-2.5 grid items-center px-4 gap-8"
                          style="grid-template-columns: 7.125rem 1fr 7.125rem;">
                       <div class="flex items-center">
