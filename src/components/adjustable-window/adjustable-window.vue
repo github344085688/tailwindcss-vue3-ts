@@ -72,11 +72,11 @@
       </div>
     </div>
     <div class="relative pt-10 xl:pt-0 demo-sm:-mt-2.5">
-      <div class="absolute  top-[86px]  left-0 right-0 bottom-0  bg-grid-slate-l00 "></div>
+      <div class="absolute  top-[91px]  left-0 right-0 bottom-0  bg-grid-slate-l00 "></div>
       <div
           class="absolute   inset-x-0 h-[37.5rem] bg-grid-gray-900/[0.04] bg-top [mask-image:linear-gradient(0deg,transparent,black)]
           dark:bg-grid-gray-100/[0.03]
-          dark:bg-[center_top_-1px] dark:border-t dark:border-gray-700 top-[86px] "></div>
+          dark:bg-[center_top_-1px] dark:border-t dark:border-gray-700 top-[91px] "></div>
       <div class="sm:px-2 demo-sm:-mt-24 xl:mt-0  h-full ">
         <div class="relative top-0  h-full ">
           <div class="max-w-7xl mx-auto sm:px-6 md:px-8  h-full ">
@@ -106,8 +106,8 @@
               >
                 <div class="sm:rounded-xl border border-gray-200 dark:border-none  rounded-lg shadow-xl ">
                   <div
-                      class="rounded-t-lg rounded-r-lg border-gray-400 dark:border-none bg-gradient-to-b from-white to-[#FBFBFB] dark:bg-none dark:bg-primary-800 dark:highlight-white/10     ">
-                    <div class="py-2.5 grid items-center px-4 gap-8"
+                      class="rounded-t-lg rounded-r-lg border-gray-400 dark:border-none bg-gradient-to-b to-[#FBFBFB] dark:bg-none dark:bg-primary-800 dark:highlight-white/10     ">
+                    <div class="py-2.5 grid items-center px-4 gap-8  from-white"
                          style="grid-template-columns: 7.125rem 1fr 7.125rem;">
                       <div class="flex items-center">
                         <div class="w-2.5 h-2.5 rounded-full bg-[#EC6A5F]"></div>
@@ -124,18 +124,18 @@
                                 stroke-linejoin="round" stroke-width="2"></path>
                         </svg>
                       </div>
-                      <div>
-                        <div
-                            class="bg-gray-100 rounded  font-medium text-xs leading-6 py-[5px] flex items-center justify-center dark:border-none border border-gray-200 ring-inset ring-gray-900/5 mx-auto w-4/5 dark:bg-primary-900 dark:text-primary-200 ">
-                          <svg class="text-gray-300 w-3.5 h-3.5 mr-1.5 dark:text-gray-500" fill="currentColor"
-                               viewBox="0 0 20 20">
-                            <path clip-rule="evenodd"
-                                  d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z"
-                                  fill-rule="evenodd"></path>
-                          </svg>
-                          unis-ui.com
-                        </div>
+
+                      <div
+                          class="bg-gray-100 rounded  font-medium text-xs leading-6 py-[5px] flex items-center justify-center dark:border-none border border-gray-200 ring-inset ring-gray-900/5 mx-auto w-4/5 dark:bg-primary-900 dark:text-primary-200 ">
+                        <svg class="text-gray-300 w-3.5 h-3.5 mr-1.5 dark:text-gray-500" fill="currentColor"
+                             viewBox="0 0 20 20">
+                          <path clip-rule="evenodd"
+                                d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z"
+                                fill-rule="evenodd"></path>
+                        </svg>
+                        unis-ui.com
                       </div>
+
                       <div class="flex justify-end">
                         <svg class="text-gray-400 dark:text-gray-500" fill="none" height="24"
                              width="24">
@@ -159,7 +159,7 @@
                         </div>
                       </div>
                       <div
-                          class="pointer-events-none select-none text-gray-900 font-medium px-4 py-1.5 flex items-center justify-center space-x-2 dark:text-gray-200">
+                          class="pointer-events-none select-none text-gray-900 font-medium px-4 px-1.5 h-full flex items-center justify-center space-x-2 dark:text-gray-200">
                         <svg class="flex-none text-indigo-600 dark:text-gray-400" fill="currentColor" height="14"
                              width="15">
                           <path

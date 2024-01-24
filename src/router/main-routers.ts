@@ -113,6 +113,18 @@ const SideNavConfig: Array<SideNavList> = [
                                 name: "VerticalSlide",
                                 title: "Vertical Slide",
                                 component: async () => await import('@/layouts/menu/vertical-slide-concertina.vue'),
+                            }, {
+                                parentName: "Demos",
+                                path: "Demos/slideDown",
+                                name: "slideDown",
+                                title: "slide down ",
+                                component: async () => await import('@/layouts/menu/slide-down.vue'),
+                            }, {
+                                parentName: "Demos",
+                                path: "Demos/Demonstrations",
+                                name: "Demonstrations",
+                                title: "Demonstrations",
+                                component: async () => await import('@/layouts/menu/Demonstrations.vue'),
                             },
                         ],
                     },
